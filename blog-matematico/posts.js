@@ -7,6 +7,13 @@ const publicaciones = [
     resumen: "Productos notables y sus algoritmos de resolución."
   },
   {
+    id: "02fac",
+    titulo: "Factorizacion 1",
+    archivo: "entradas/factor1.js",
+    fecha: "2026-10-08",
+    resumen: "Factorizacion de productos"
+  },
+  {
     id: "Blank Page",
     titulo: "Blank Page",
     archivo: "entradas/blank.js",
