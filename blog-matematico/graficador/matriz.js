@@ -107,7 +107,15 @@ function restar(A, B) {
  */
 function escalar(k, A) {
   // TODO Workshop 1
-  pendiente('escalar', 'Workshop 1');
+  // pendiente('escalar', 'Workshop 1');
+  const [m,n] = orden(A);
+  const R = crearMatriz(m,n);
+  for (let i = 0; i < m; i++) {
+	  for (let j = 0; j < n; j++) {
+		  R[i][j] = k * A[i][j];
+	  }
+  }
+  return R;
 }
 
 /**
@@ -118,7 +126,15 @@ function escalar(k, A) {
  */
 function transpuesta(A) {
   // TODO Workshop 1
-  pendiente('transpuesta', 'Workshop 1');
+  // pendiente('transpuesta', 'Workshop 1');
+  const [m,n] = orden(A);
+  const R = crearMatriz(n,m);
+  for (let i = 0; i < m; i++) {
+	  for (let j = 0; j < n; j++) {
+		  R[j][i] = A[i][j];
+	  }
+  }
+  return R;
 }
 
 
@@ -130,7 +146,14 @@ function transpuesta(A) {
 /** Determinante de una matriz 2 × 2:  ad − bc */
 function det2(T) {
   // TODO Workshop 2
-  pendiente('det2', 'Workshop 2');
+  // pendiente('det2', 'Workshop 2');
+  var determinante = 0;
+  const a = T[0][0];
+  const b = T[0][1];
+  const c = T[1][0];
+  const d = T[1][1];
+  determinante = a * d - b * c;
+  return determinante;
 }
 
 /**
@@ -141,7 +164,31 @@ function transformar(x, y, T) {
   // TODO Workshop 2
   pendiente('transformar', 'Workshop 2');
 }
-
+/**
+* Determinante de una matriz cuadrada de cualquier tamaño, por COFACTORES.
+* Regresa un NÚMERO, no una matriz.
+*
+* Si A no es cuadrada:
+*     throw new Error('El determinante solo existe para matrices cuadradas.');
+*
+* Pista: es recursiva.
+*   - Si A es 2 × 2, regresa det2(A).
+*   - Si no, recorre el renglón 0: para cada columna j, arma el MENOR
+*     (A sin el renglón 0 y sin la columna j) y suma
+*         (−1)^j · A[0][j] · determinante(menor)
+*/
+function determinante(A) {
+  // TODO Workshop 2
+  //pendiente('determinante', 'Workshop 2');
+  const [filas, columnas] = orden(A);
+  var determinante = 0;
+  if (filas == 2) {
+    determinante = det2(A);
+	return determinante;
+  } else {
+    pendiente('determinante', 'Workshop 2');
+  }
+}
 
 // =============================================================
 //  WORKSHOP 3 — Sistemas de ecuaciones I         Actividad #33
